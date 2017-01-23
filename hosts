@@ -1,3 +1,4 @@
+# on renseigne les machines que l'on souhaite administrer avec l'IP mais également avec l'hostname
 [ansible]
 192.168.0.100
 
