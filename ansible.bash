@@ -28,7 +28,7 @@ sudo chown -R ansible:sudo /home/ansible/
 # Change user and Move to ansible home.
 sudo su - ansible
 # passage a ansible avec son environnement puis lance le clonage du repository distant
-sudo su - ansible -c "git clone git@github.com:Julien28/ansible-poc.git"
+sudo su - ansible -c "git clone https://github.com/Julien28/ansible-poc.git"
 # concatene la clé publique qui sera utilisée par ansible dans le fichier authorized_keys de l'utilisateur ubuntu ( avec >> pour ne pas écraser le fichier)
 sudo echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDCgd1aFqw7Z4TXfmFG1Shs82ghIrSgyc5xY03AsAtahndr3PRKun+120FiDsLAAi7/xKnhCgKPrBakP4cIMJRu29eon8W5d8l4WxBRl1S9ElKp88zRDjE3uIYTuQh0phOynR8477pIGXA7IwKNJT2jsngDbagzi6XRbrkBzPf7N68fwyGdqkoi0vlbRn6PRuMLxGj1V0fySXDGJ17YALTV5JLF91HkE2xTW+DamGKZZG2mvTWuqRAfX/cXd6GNr6hGWXyVi8npW17xaCTxVCFHzpIbnXNo2m2spkBodr4AlgG45Pftrjkz8fsoNdqJaCcb+e2VZ/P1B7K+PRTwrpChhJ8W/HAU91Lq/Vyi0ngqQjjWa3NgeR/xbNMIEn9lH0c8AYjOmijKdnD9e2IpQd7phfLtYLBAWQ2/ruVIb1eT704Kscm5q85Ad86J7PYHvAso+jaITSz2HRH/quOstKQDqiup/SzujBTgy9AWYzRKgY1Fj4yLJ+UUSgssV80C9y0iwdbc/ptTQJbjQdofanB8NAvtXOsohA4cW3OImtkX6aMxAqKN0fYC9l3bB+BwG1HprCKh4QtiT1V9hhOaep6Sy65nap4CUCRxWA0gPgquJvFDQvYPYamKYCeytyVJIgma0bEwyyPJLw0lgv/pgpQfFGrQbe49UQRFBpkOfBz3yw== poc-ansible" >> /home/ubuntu/.ssh/authorized_keys
 # désactive la vérification stricte des serveurs sous contrôle d'Ansible + set l'utilisateur remote par défaut en ubuntu + demande l'élévation de privilège.

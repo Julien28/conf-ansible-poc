@@ -18,7 +18,7 @@ nodes = [
 # choix de version de l'API Vagrant
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|			
 
-  # pour chaque éléments dans la liste ansible
+  # pour chaque éléments dans la liste "ansible"
   ansible.each do |ans|
     # création de l'enveloppe de la VM
     config.vm.define ans[:hostname] do |ansconfig|
@@ -30,7 +30,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       ansconfig.vm.provision "file", source: "id_rsa", destination: "/tmp/id_rsa"
 	  ansconfig.vm.provision "file", source: "id_rsa.pub", destination: "/tmp/id_rsa.pub"
 	  ansconfig.vm.provision "file", source: "hosts", destination: "/tmp/hosts"
-	  # envoie du script dans la VM et l'execute
+	  # envoie du script ansible.bash dans la VM et l'execute
       ansconfig.vm.provision "shell", path: "ansible.bash"
       memory = ans[:ram] ? ans[:ram] : 512;
 	  # customisation de la VM
@@ -44,7 +44,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
  
-  # pour chaque éléments dans la liste nodes 
+  # pour chaque éléments dans la liste "nodes" 
   nodes.each do |node|
     # création de l'enveloppe des VM
     config.vm.define node[:hostname] do |nodeconfig|
