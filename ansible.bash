@@ -12,6 +12,7 @@ sudo mv /tmp/hosts /etc/ansible/hosts
 # ajoute un urilisateur dans le groupe primaire
 sudo useradd -c "ansible admin" -g sudo -m -s /bin/bash ansible
 sudo echo "ansible:ansible" | chpasswd
+sudo echo "ansible ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/80-ansible-user
 # créer le fichier .ssh
 sudo mkdir /home/ansible/.ssh
 # permet de modifier la permission d'accès (lire, écrire et executer le fichier)
